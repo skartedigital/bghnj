@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Filtro da Flávia e Yan">
+  <meta property="og:description" content="Use o filtro do nosso grande dia">
+  <meta property="og:image" content="preview.jpg">
+  <meta property="og:type" content="website">
+  <title>Filtro da Flávia e Yan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <video id="video" autoplay muted playsinline></video>
+  <canvas id="filterCanvas"></canvas>
+  <img id="overlay" src="moldura.png" alt="Moldura">
+
+  <div id="recording-indicator">🔴 REC 00:00</div>
+  <div id="loading-message">Aguarde… estamos preparando seu vídeo 📽️✨</div>
+
+  <div id="filter-panel">
+    <div id="filter-title">EFEITOS</div>
+    <div id="filter-options">
+      <button type="button" class="filter-option active" data-filter="normal">Normal</button>
+      <button type="button" class="filter-option" data-filter="bright">✨ Brilho</button>
+      <button type="button" class="filter-option" data-filter="warm">☀️ Quente</button>
+      <button type="button" class="filter-option" data-filter="cool">❄️ Frio</button>
+    </div>
+  </div>
+
+  <div id="buttons">
+    <button id="switch-camera" title="Trocar câmera">🔄</button>
+    <button id="capture" title="Tirar foto">📸</button>
+    <button id="start-recording" title="Gravar vídeo">🎥</button>
+    <button id="stop-recording" title="Parar gravação" style="display:none;">⏹</button>
+  </div>
+
+  <canvas id="canvas" style="display:none;"></canvas>
+  <canvas id="recordingCanvas" style="display:none;"></canvas>
+
+  <div id="preview-container">
+    <img id="photo-preview">
+    <button id="save-btn">Salvar na galeria</button>
+    <button id="retry-btn">Tirar outra</button>
+    <div id="instructions">Se estiver no iPhone:<br>Toque e segure a imagem e selecione “Salvar na Fototeca”.</div>
+  </div>
+
+  <div id="video-preview-container">
+    <video id="video-preview" controls playsinline></video>
+    <button id="save-video-btn">Salvar vídeo</button>
+    <div id="video-instructions">No iPhone, o vídeo vai para o app “Arquivos”. Abra o vídeo e selecione “Salvar Vídeo”.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
